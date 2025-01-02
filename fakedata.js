@@ -1,9 +1,4 @@
 const { faker } = require('@faker-js/faker');
-
-
-
-const path = require('path');
-
 const { v4: uuid } = require('uuid');
 const mysql = require('mysql2');
 const connection = mysql.createConnection({
