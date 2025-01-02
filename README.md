@@ -35,7 +35,7 @@ Ensure you have MySQL installed and running. Then:
   - Password (your MySQL password)
   - Database name (e.g., `delta_app`)
 
-### 4. Run the Schema Script
+### 4 a) Run the Schema Script
 Login to MySQL and run the provided schema script to create the necessary tables:
 ```bash
 $ mysql -u <username> -p -P <port>
@@ -44,11 +44,15 @@ mysql> CREATE DATABASE IF NOT EXISTS delta_app;
 mysql> USE delta_app;
 mysql> SOURCE schema.sql;
 ```
+### 4 b) Generate fake data and insert in database using :
+```bash
+$ node fakedata.js
+```
 
 ### 5. Start the Application
 Run the application using:
 ```bash
-$ node index.js
+$ nodemon index.js
 ```
 
 ### 6. Access the Application
