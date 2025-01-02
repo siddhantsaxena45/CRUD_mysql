@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>DATABASE OF USERS</h1>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th colspan="2">options</th>
+        </tr>
+        <% users.forEach(user=> { %>
+            <tr>
+                <td>
+                    <%= user.id %>
+                </td>
+                <td>
+                    <%= user.username %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <form action="/users/<%= user.id %>/edit" method="get"><button>edit</button></form>
+                </td>
+                <td>
+                    <form action="/users/<%= user.id %>/delete" method="get"><button>delete</button></form>
+                </td>
+            </tr>
+            <% }) %>
+</body>
+
+</html>
