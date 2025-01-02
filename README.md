@@ -40,7 +40,7 @@ Login to MySQL and run the provided schema script to create the necessary tables
 ```bash
 $ mysql -u <username> -p -P <port>
 Enter password: <your_password>
-mysql> CREATE DATABSE F NOT EXISTS delta_app;
+mysql> CREATE DATABASE IF NOT EXISTS delta_app;
 mysql> USE delta_app;
 mysql> SOURCE schema.sql;
 ```
