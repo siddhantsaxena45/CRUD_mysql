@@ -1,61 +1,77 @@
 # CRUD Application with MySQL
 
-## Overview
-This is a simple CRUD (Create, Read, Update, Delete) application built using Node.js, Express, and MySQL. It provides basic operations to manage user data, including creating, viewing, updating, and deleting user records.
-
-## Prerequisites
-Ensure you have the following installed on your system:
-- [Node.js](https://nodejs.org/) (v16 or higher recommended)
-- [MySQL](https://www.mysql.com/) (v8.0 or higher recommended)
-- [Git](https://git-scm.com/)
-
-## Installation Steps
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/siddhantsaxena45/CRUD_mysql.git
-   cd CRUD_mysql
-   ```
-
-2. **Install Dependencies**
-   Run the following command to install the required Node.js packages:
-   ```bash
-   npm install
-   ```
-
-3. **Set Up the MySQL Database**
-   - Start your MySQL server.
-   - Open the MySQL CLI:
-     ```bash
-     mysql -u root -p -P 3307
-     ```
-   - Execute the following commands to configure the database:
-     ```sql
-     ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'test123';
-     FLUSH PRIVILEGES;
-     ```
-   - Create the `delta_app` database and the required `user` table:
-     ```bash
-     source schema.sql
-     ```
-
-4. **Run the Application**
-   Start the Node.js server:
-   ```bash
-   node index.js
-   ```
-
-5. **Access the Application**
-   Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+This is a simple Node.js project demonstrating CRUD (Create, Read, Update, Delete) operations with a MySQL database. The application uses Express for routing and EJS for rendering views.
 
 ## Features
-- View a dashboard displaying the total count of users.
-- Add new users.
-- View, update, and delete user records.
+- Create, Read, Update, and Delete user records in the database.
+- Faker.js is used to generate sample user data.
+- MySQL is used for database management.
+
+---
+
+## Installation Guide
+
+Follow these steps to set up the project on your local machine:
+
+### 1. Clone the Repository
+```bash
+$ git clone https://github.com/siddhantsaxena45/CRUD_mysql.git
+$ cd CRUD_mysql
+```
+
+### 2. Install Dependencies
+Use npm to install the required dependencies:
+```bash
+$ npm install
+```
+
+### 3. Configure MySQL Database
+Ensure you have MySQL installed and running. Then:
+- Create a new database (e.g., `delta_app`).
+- Update the `index.js` file with your MySQL credentials:
+  - Host (default: `localhost`)
+  - Port (default: `3306` or your configured port)
+  - Username (e.g., `root`)
+  - Password (your MySQL password)
+  - Database name (e.g., `delta_app`)
+
+### 4. Run the Schema Script
+Login to MySQL and run the provided schema script to create the necessary tables:
+```bash
+$ mysql -u <username> -p -P <port>
+Enter password: <your_password>
+mysql> USE delta_app;
+mysql> SOURCE schema.sql;
+```
+
+### 5. Start the Application
+Run the application using:
+```bash
+$ node index.js
+```
+
+### 6. Access the Application
+Open your browser and navigate to:
+```
+http://localhost:3000
+```
+
+---
+
+## Notes
+- Update `.env` or configuration files with your unique database credentials and ports.
+- Ensure MySQL service is running before starting the application.
+
+## Dependencies
+- Node.js
+- Express
+- MySQL2
+- Faker.js
+- EJS
+
+---
 
 ## License
 This project is licensed under the MIT License.
 
+Happy coding! 🚀
