@@ -53,7 +53,7 @@ $ node index.js
 ### 6. Access the Application
 Open your browser and navigate to:
 ```
-http://localhost:3000
+http://localhost:<port>
 ```
 
 ---
